@@ -9,10 +9,18 @@ const postData = async (path, data) => {
     });
     const json = await response.json();
     return json;
-  } 
-  catch (error) {
-    alert("oops"); 
+  } catch (error) {
+    alert("oops");
   }
 };
-export { postData };
- 
+
+const getData = async (path) => {
+  try {
+    const response = await fetch(`${BASE_URL}/${path}`);
+    const json = await response.json();
+    return json;
+  } catch (error) {
+    alert("error")
+  }
+};
+export { postData,getData };
