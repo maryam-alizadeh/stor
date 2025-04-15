@@ -5,7 +5,10 @@ import { shortenText } from "./utils/stringFunction.js";
 const loginButton = document.getElementById("login");
 const dashboardButton = document.getElementById("dashboard");
 const mainContent = document.getElementById("products");
+const inputBox = document.querySelector("input");
+const searchButton = document.querySelector("button");
 
+let allProducts;
 const showProducts = (products) => {
   mainContent.innerHTML = "";
 
@@ -44,8 +47,17 @@ const init = async () => {
     dashboardButton.style.display = "none";
   }
 
-  const allProducts = await getData("products");
+  allProducts = await getData("products");
   showProducts(allProducts);
+
+  const searchHandler = () => {
+    const query = inputBox.value.trim().toLowerCase();
+    if (!query) showProducts(allProducts);
+    const filterProducts = allProducts.filter((product) => product.title.toLowerCase().includes(query));
+    showProducts(filterProducts);
+  };
+
+  searchButton.addEventListener("click", searchHandler);
 };
 
 document.addEventListener("DOMContentLoaded", init);

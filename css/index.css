@@ -104,14 +104,14 @@ header a:hover {
   border-radius: 5px;
 }
 
-#products{
+#products {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   width: 100%;
 }
 
-#products > div{
+#products > div {
   background-color: #fff;
   width: 250px;
   margin-bottom: 20px;
@@ -120,17 +120,17 @@ header a:hover {
   position: relative;
 }
 
-img{
+img {
   width: 220px;
   height: 220px;
   margin: 50px 0 40px;
 }
 
-h4{
+h4 {
   color: var(--color-primary);
 }
 
-#price{
+#price {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -142,7 +142,7 @@ h4{
   font-weight: 600;
 }
 
-#price button{
+#price button {
   color: var(--color-primary);
   background-color: var(--color-secondary);
   border: none;
@@ -152,23 +152,22 @@ h4{
   transition: all 0.1s ease-in;
 }
 
-#price button:hover{
+#price button:hover {
   color: #fff;
   background-color: var(--color-secondary);
-
 }
 
-#rate{
+#rate {
   position: absolute;
   top: 15px;
   background-color: var(--color-secondary);
-color: var(--color-warning);
-padding: 5px;
-border-radius: 5px;
-font-size: 0.9rem;
+  color: var(--color-warning);
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 0.9rem;
 }
 
-#count{
+#count {
   position: absolute;
   top: 15px;
   right: 15px;
