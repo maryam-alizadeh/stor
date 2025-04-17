@@ -7,6 +7,7 @@ const dashboardButton = document.getElementById("dashboard");
 const mainContent = document.getElementById("products");
 const inputBox = document.querySelector("input");
 const searchButton = document.querySelector("button");
+const listItems = document.querySelectorAll("li");
 
 let allProducts;
 const showProducts = (products) => {
@@ -56,7 +57,23 @@ const init = async () => {
     const filterProducts = allProducts.filter((product) => product.title.toLowerCase().includes(query));
     showProducts(filterProducts);
   };
+  const filterHandler = (event) => {
+    const category = event.target.innerText.toLowerCase();
+    listItems.forEach((li) => {
+      if (li.innerText.toLowerCase() == category) {
+        li.className = "selected";
+      } else {
+        li.className = "";
+      }
+    });
+    if (category === "all") {
+      return showProducts(allProducts);
+    }
+    const filteredProducts = allProducts.filter((product) => product.category.toLowerCase() === category);
+    showProducts(filteredProducts);
+  };
 
+  listItems.forEach((li) => li.addEventListener("click", filterHandler));
   searchButton.addEventListener("click", searchHandler);
 };
 
