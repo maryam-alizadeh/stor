@@ -21,12 +21,12 @@ const renderUsers = (users) => {
 
         <div>
         <p><i class="fa-solid fa-envelope"></i>Email:</p>
-        <span>${user.emeil} ${user.name.lastname}</span> 
+        <span>${user.email} </span> 
         </div>
 
         <div>
         <p><i class="fa-solid fa-phone"></i>Phone:</p>
-        <span>${user.phone} ${user.name.lastname}</span> 
+        <span>${user.phone} </span> 
         </div>
 
         <div>
